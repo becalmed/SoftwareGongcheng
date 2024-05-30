@@ -42,7 +42,7 @@ import me.zhengjie.utils.PageResult;
 * @website https://eladmin.vip
 * @description 服务实现
 * @author fjw
-* @date 2024-05-16
+* @date 2024-05-24
 **/
 @Service
 @RequiredArgsConstructor
@@ -103,6 +103,12 @@ public class SysActivityServiceImpl implements SysActivityService {
             map.put("更新者", sysActivity.getUpdateBy());
             map.put("创建时间", sysActivity.getCreateTime());
             map.put("更新时间", sysActivity.getUpdateTime());
+            map.put("开始日期", sysActivity.getStartTime());
+            map.put("开始时刻", sysActivity.getStartHour());
+            map.put("结束日期", sysActivity.getEndTime());
+            map.put("结束时刻", sysActivity.getEndHour());
+            map.put("参与者列表", sysActivity.getParticipants());
+            map.put("资源需求列表", sysActivity.getResourceRequirements());
             list.add(map);
         }
         FileUtil.downloadExcel(list, response);

@@ -31,7 +31,7 @@ import java.io.Serializable;
 * @website https://eladmin.vip
 * @description /
 * @author fjw
-* @date 2024-05-16
+* @date 2024-05-24
 **/
 @Entity
 @Data
@@ -72,6 +72,34 @@ public class SysActivity implements Serializable {
     @UpdateTimestamp
     @ApiModelProperty(value = "更新时间")
     private Timestamp updateTime;
+
+    @Column(name = "`start_time`",nullable = false)
+    @NotBlank
+    @ApiModelProperty(value = "开始日期")
+    private String startTime;
+
+    @Column(name = "`start_hour`",nullable = false)
+    @NotBlank
+    @ApiModelProperty(value = "开始时刻")
+    private String startHour;
+
+    @Column(name = "`end_time`",nullable = false)
+    @NotBlank
+    @ApiModelProperty(value = "结束日期")
+    private String endTime;
+
+    @Column(name = "`end_hour`",nullable = false)
+    @NotBlank
+    @ApiModelProperty(value = "结束时刻")
+    private String endHour;
+
+    @Column(name = "`participants`")
+    @ApiModelProperty(value = "参与者列表")
+    private String participants;
+
+    @Column(name = "`resource_requirements`")
+    @ApiModelProperty(value = "资源需求列表")
+    private String resourceRequirements;
 
     public void copy(SysActivity source){
         BeanUtil.copyProperties(source,this, CopyOptions.create().setIgnoreNullValue(true));

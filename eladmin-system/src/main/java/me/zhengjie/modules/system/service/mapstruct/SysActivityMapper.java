@@ -24,7 +24,7 @@ import org.mapstruct.ReportingPolicy;
 /**
 * @website https://eladmin.vip
 * @author fjw
-* @date 2024-05-16
+* @date 2024-05-24
 **/
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface SysActivityMapper extends BaseMapper<SysActivityDto, SysActivity> {

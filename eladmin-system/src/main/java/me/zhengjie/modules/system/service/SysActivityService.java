@@ -29,7 +29,7 @@ import me.zhengjie.utils.PageResult;
 * @website https://eladmin.vip
 * @description 服务接口
 * @author fjw
-* @date 2024-05-16
+* @date 2024-05-24
 **/
 public interface SysActivityService {
 

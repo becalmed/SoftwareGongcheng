@@ -22,7 +22,7 @@ import me.zhengjie.annotation.Query;
 /**
 * @website https://eladmin.vip
 * @author fjw
-* @date 2024-05-16
+* @date 2024-05-24
 **/
 @Data
 public class SysActivityQueryCriteria{
@@ -42,4 +42,8 @@ public class SysActivityQueryCriteria{
     /** 精确 */
     @Query
     private Integer updateBy;
+
+    /** 精确 */
+    @Query
+    private String participants;
 }
