@@ -23,7 +23,7 @@ import java.io.Serializable;
 * @website https://eladmin.vip
 * @description /
 * @author fjw
-* @date 2024-05-16
+* @date 2024-05-24
 **/
 @Data
 public class SysActivityDto implements Serializable {
@@ -48,4 +48,22 @@ public class SysActivityDto implements Serializable {
 
     /** 更新时间 */
     private Timestamp updateTime;
+
+    /** 开始日期 */
+    private String startTime;
+
+    /** 开始时刻 */
+    private String startHour;
+
+    /** 结束日期 */
+    private String endTime;
+
+    /** 结束时刻 */
+    private String endHour;
+
+    /** 参与者列表 */
+    private String participants;
+
+    /** 资源需求列表 */
+    private String resourceRequirements;
 }

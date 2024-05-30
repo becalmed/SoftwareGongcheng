@@ -15,9 +15,9 @@
 */
 package me.zhengjie.modules.system.service;
 
-import me.zhengjie.modules.system.domain.SysActivity;
-import me.zhengjie.modules.system.service.dto.SysActivityDto;
-import me.zhengjie.modules.system.service.dto.SysActivityQueryCriteria;
+import me.zhengjie.modules.system.domain.SysActivityTable;
+import me.zhengjie.modules.system.service.dto.SysActivityTableDto;
+import me.zhengjie.modules.system.service.dto.SysActivityTableQueryCriteria;
 import org.springframework.data.domain.Pageable;
 import java.util.Map;
 import java.util.List;
@@ -31,7 +31,7 @@ import me.zhengjie.utils.PageResult;
 * @author fjw
 * @date 2024-05-24
 **/
-public interface SysActivityService {
+public interface SysActivityTableService {
 
     /**
     * 查询数据分页
@@ -39,39 +39,39 @@ public interface SysActivityService {
     * @param pageable 分页参数
     * @return Map<String,Object>
     */
-    PageResult<SysActivityDto> queryAll(SysActivityQueryCriteria criteria, Pageable pageable);
+    PageResult<SysActivityTableDto> queryAll(SysActivityTableQueryCriteria criteria, Pageable pageable);
 
     /**
     * 查询所有数据不分页
     * @param criteria 条件参数
-    * @return List<SysActivityDto>
+    * @return List<SysActivityTableDto>
     */
-    List<SysActivityDto> queryAll(SysActivityQueryCriteria criteria);
+    List<SysActivityTableDto> queryAll(SysActivityTableQueryCriteria criteria);
 
     /**
      * 根据ID查询
-     * @param activityId ID
-     * @return SysActivityDto
+     * @param date ID
+     * @return SysActivityTableDto
      */
-    SysActivityDto findById(Integer activityId);
+    SysActivityTableDto findById(String date);
 
     /**
     * 创建
     * @param resources /
     */
-    void create(SysActivity resources);
+    void create(SysActivityTable resources);
 
     /**
     * 编辑
     * @param resources /
     */
-    void update(SysActivity resources);
+    void update(SysActivityTable resources);
 
     /**
     * 多选删除
     * @param ids /
     */
-    void deleteAll(Integer[] ids);
+    void deleteAll(String[] ids);
 
     /**
     * 导出数据
@@ -79,5 +79,5 @@ public interface SysActivityService {
     * @param response /
     * @throws IOException /
     */
-    void download(List<SysActivityDto> all, HttpServletResponse response) throws IOException;
+    void download(List<SysActivityTableDto> all, HttpServletResponse response) throws IOException;
 }

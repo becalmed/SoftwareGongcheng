@@ -13,37 +13,16 @@
 *  See the License for the specific language governing permissions and
 *  limitations under the License.
 */
-package me.zhengjie.modules.system.service.dto;
+package me.zhengjie.modules.system.repository;
 
-import lombok.Data;
-import java.util.List;
-import me.zhengjie.annotation.Query;
+import me.zhengjie.modules.system.domain.SysActivityTable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 /**
 * @website https://eladmin.vip
 * @author fjw
 * @date 2024-05-24
 **/
-@Data
-public class SysActivityQueryCriteria{
-
-    /** 模糊 */
-    @Query(type = Query.Type.INNER_LIKE)
-    private String activityName;
-
-    /** 精确 */
-    @Query
-    private String activityProgress;
-
-    /** 精确 */
-    @Query
-    private Integer createBy;
-
-    /** 精确 */
-    @Query
-    private Integer updateBy;
-
-    /** 精确 */
-    @Query
-    private String participants;
+public interface SysActivityTableRepository extends JpaRepository<SysActivityTable, String>, JpaSpecificationExecutor<SysActivityTable> {
 }

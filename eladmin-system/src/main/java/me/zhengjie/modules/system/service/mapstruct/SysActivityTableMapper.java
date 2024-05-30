@@ -13,37 +13,20 @@
 *  See the License for the specific language governing permissions and
 *  limitations under the License.
 */
-package me.zhengjie.modules.system.service.dto;
+package me.zhengjie.modules.system.service.mapstruct;
 
-import lombok.Data;
-import java.util.List;
-import me.zhengjie.annotation.Query;
+import me.zhengjie.base.BaseMapper;
+import me.zhengjie.modules.system.domain.SysActivityTable;
+import me.zhengjie.modules.system.service.dto.SysActivityTableDto;
+import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
 
 /**
 * @website https://eladmin.vip
 * @author fjw
 * @date 2024-05-24
 **/
-@Data
-public class SysActivityQueryCriteria{
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public interface SysActivityTableMapper extends BaseMapper<SysActivityTableDto, SysActivityTable> {
 
-    /** 模糊 */
-    @Query(type = Query.Type.INNER_LIKE)
-    private String activityName;
-
-    /** 精确 */
-    @Query
-    private String activityProgress;
-
-    /** 精确 */
-    @Query
-    private Integer createBy;
-
-    /** 精确 */
-    @Query
-    private Integer updateBy;
-
-    /** 精确 */
-    @Query
-    private String participants;
 }

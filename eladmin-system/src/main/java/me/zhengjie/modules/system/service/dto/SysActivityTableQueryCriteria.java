@@ -25,25 +25,9 @@ import me.zhengjie.annotation.Query;
 * @date 2024-05-24
 **/
 @Data
-public class SysActivityQueryCriteria{
-
-    /** 模糊 */
-    @Query(type = Query.Type.INNER_LIKE)
-    private String activityName;
+public class SysActivityTableQueryCriteria{
 
     /** 精确 */
     @Query
-    private String activityProgress;
-
-    /** 精确 */
-    @Query
-    private Integer createBy;
-
-    /** 精确 */
-    @Query
-    private Integer updateBy;
-
-    /** 精确 */
-    @Query
-    private String participants;
+    private String date;
 }

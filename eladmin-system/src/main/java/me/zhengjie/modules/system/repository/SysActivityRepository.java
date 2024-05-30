@@ -22,7 +22,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 /**
 * @website https://eladmin.vip
 * @author fjw
-* @date 2024-05-16
+* @date 2024-05-24
 **/
 public interface SysActivityRepository extends JpaRepository<SysActivity, Integer>, JpaSpecificationExecutor<SysActivity> {
 }
